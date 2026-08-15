@@ -2,7 +2,7 @@
 
 const social = () => {
   const socialBox =
-  "flex gap-2 justify-center text-xl items-center w-50 h-10 bg-[#1A1A18] rounded-lg  border border-[#1A1A18] hover:bg-gray-800 hover:border-gray-800";
+  "flex gap-2 justify-center  items-center w-50 h-10 bg-[#1A1A18] rounded-lg  border border-[#1A1A18] hover:bg-gray-800 hover:border-gray-800";
   return (
     <div className="flex w-full flex-col  gap-5">
       <h1>Connect with Me</h1>
@@ -92,8 +92,8 @@ const social = () => {
         </div>
       </div>
       <div className="flex justify-center items-center  w-full gap-2.5">
-        <input  placeholder="Give Email To Connect with me...." className=" w-50 h-10 p-3  border-2 rounded-lg border-none "  />
-        <button className="bg-[#1A1A18] border text-xl content-center border-[#1A1A18] w-30 h-10 hover:bg-gray-800 hover:border-gray-800  rounded-lg">Submit</button>
+        <input  placeholder="Enter Email To Conn..." className=" w-50 h-10 p-3  border-2 rounded-lg border-none "  />
+        <button className="bg-[#1A1A18] border content-center border-[#1A1A18] w-30 h-10 hover:bg-gray-800 hover:border-gray-800  rounded-lg">Submit</button>
       </div>
     </div>
   );
