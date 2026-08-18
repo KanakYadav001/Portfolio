@@ -33,5 +33,5 @@ export default function LiveTime() {
 		return () => clearInterval(intervalId);
 	}, []);
 
-	return <p suppressHydrationWarning>{formattedTime}</p>;
+	return <p className="sm:block hidden" suppressHydrationWarning>{formattedTime}</p>;
 }

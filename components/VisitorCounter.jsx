@@ -21,7 +21,7 @@ export default function VisitorCounter() {
   }
 
   return (
-    <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+    <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 ">
       {count.toLocaleString()} visitor{count === 1 ? "" : "s"}
     </p>
   );

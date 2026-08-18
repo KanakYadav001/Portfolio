@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Providers from "@/components/Providers";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -157,6 +158,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -165,9 +167,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col ">
-        <Providers>{children}</Providers>
+        <Providers>{children}
+           <Analytics />
+        </Providers>
       </body>
     </html>
   );
 }
-
