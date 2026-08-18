@@ -1,13 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #0b0d0f;
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root,
+html.dark,
+.dark {
+  --background: #0D0D0D;
   --foreground: #f3f4f6;
   --muted: #9ca3af;
   --panel: #171a1d;
   --panel-soft: #1c2126;
   --border: rgba(255, 255, 255, 0.08);
   --accent: #5eead4;
+  --heading-color: #ffffff;
+  --body-color: #d1d5db;
+  --card-bg: #161616;
+  --card-border: rgba(255, 255, 255, 0.08);
+}
+
+html.light,
+.light {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --muted: #64748b;
+  --panel: #f8fafc;
+  --panel-soft: #f1f5f9;
+  --border: rgba(0, 0, 0, 0.1);
+  --accent: #0d9488;
+  --heading-color: #09090b;
+  --body-color: #334155;
+  --card-bg: #f4f4f5;
+  --card-border: rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -18,7 +41,7 @@
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: dark light;
 }
 
 body {
@@ -26,27 +49,60 @@ body {
   color: var(--foreground);
   font-family: var(--font-manrope), Arial, sans-serif;
   font-size: 15px;
-  letter-spacing: 1.4px;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-button,
-input {
-  font-family: var(--font-manrope), Arial, sans-serif;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
 }
 
-h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background);
 }
 
-* {
-  box-sizing: border-box;
+::-webkit-scrollbar-thumb {
+  background: #4b4f55;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button,
+  input,
+  a,
+  .font-bold,
+  .font-semibold,
+  strong,
+  b {
+    color: var(--heading-color);
+    font-family: var(--font-manrope), Arial, sans-serif;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+
+  p {
+    color: var(--body-color);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 }

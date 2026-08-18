@@ -12,7 +12,7 @@ import Skills from '@/components/skillTool/skillTool'
 
 const page = () => {
   return (
-    <div className='flex flex-col items-center justify-center gap-20 h-fit w-150 overflow-x-hidden self-center scrollbar-none'>
+    <div className='flex flex-col items-center justify-center gap-15 h-fit w-full max-w-[600px] px-4 sm:px-0 overflow-x-hidden self-center scrollbar-none'>
       <NavBar />
       <Intro />
       <Experience />
